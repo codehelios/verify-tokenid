@@ -33,7 +33,8 @@
     "lint": "eslint . --ext .ts --ext .mts",
     "test": "jest --coverage",
     "prettier": "prettier --config .prettierrc --write .",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "prepublish": "npm run build:release"
   },
   "author": "Codehelios <97363633+codehelios-com@users.noreply.github.com>",
   "license": "MIT",
