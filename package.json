@@ -1,6 +1,6 @@
 {
   "name": "@codehelios/verify-tokenid",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Library to verify firebase tokenId in Cloudflare Workers for authenticating users using firebase auth tokenId.",
   "type": "module",
   "engines": {
@@ -43,6 +43,7 @@
     "url": "https://github.com/codehelios/verify-tokenid.git"
   },
   "dependencies": {
+    "@tsndr/cloudflare-worker-jwt": "^2.0.0",
     "tslib": "~2.4"
   },
   "volta": {
