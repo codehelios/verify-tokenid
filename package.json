@@ -1,13 +1,13 @@
 {
   "name": "@codehelios/verify-tokenid",
-  "version": "0.2.4",
+  "version": "0.2.6",
   "description": "Library to verify firebase tokenId in Cloudflare Workers for authenticating users using firebase auth tokenId.",
   "type": "module",
   "engines": {
     "node": ">= 16.13 <17"
   },
-  "main": "build/src/index.js",
-  "types": "build/src/index.d.ts",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "devDependencies": {
     "@rollup/plugin-typescript": "^8.3.3",
     "@types/jest": "~27.5",
@@ -27,7 +27,7 @@
     "typescript": "~4.7"
   },
   "scripts": {
-    "start": "node build/src/index.js",
+    "start": "node build/index.js",
     "dev": "npm run build && wrangler dev",
     "clean": "rimraf coverage build tmp",
     "prebuild": "npm run lint",
