@@ -1,6 +1,6 @@
 {
   "env": {
-    "browser": false,
+    "browser": true,
     "es6": true,
     "node": true
   },
@@ -10,7 +10,10 @@
     "sourceType": "module",
     "ecmaVersion": 2020
   },
-  "plugins": ["@typescript-eslint", "jest"],
+  "plugins": [
+    "@typescript-eslint",
+    "jest"
+  ],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
@@ -18,5 +21,6 @@
     "plugin:jest/recommended",
     "prettier"
   ],
-  "rules": {}
+  "rules": {},
+  "ignorePatterns": "/**/*.d.ts"
 }

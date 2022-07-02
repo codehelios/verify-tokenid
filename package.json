@@ -45,6 +45,7 @@
     "url": "https://github.com/codehelios/verify-tokenid.git"
   },
   "dependencies": {
+    "@tsndr/cloudflare-worker-jwt": "^2.0.0",
     "tslib": "~2.4"
   },
   "volta": {
