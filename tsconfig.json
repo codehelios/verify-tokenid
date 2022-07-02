@@ -5,6 +5,8 @@
     "lib": [
       "ES2022"
     ],
+    "allowJs": true,
+    "checkJs": false,
     "moduleResolution": "Node16",
     "rootDir": ".",
     "outDir": "build",
