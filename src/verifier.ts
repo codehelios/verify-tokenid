@@ -1,6 +1,10 @@
 /* eslint-disable prefer-const */
 
-import { jwtVerify, decodeProtectedHeader, importX509 } from 'jose';
+import {
+  jwtVerify,
+  decodeProtectedHeader,
+  importX509,
+} from './browser/index.js';
 
 export interface decodedToken {
   header: { alg: string | 'RS256'; kid: string; typ: string | 'JWT' } | unknown;
