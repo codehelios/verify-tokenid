@@ -21,7 +21,10 @@
     "noImplicitThis": false,
     "strictNullChecks": false,
     "declaration": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "types": [
+      "@cloudflare/workers-types"
+    ]
   },
   "include": [
     "src/**/*",

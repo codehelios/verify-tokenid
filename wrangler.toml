@@ -1,0 +1,4 @@
+name = "verify-tokenid"
+compatibility_date = "2022-07-02"
+
+main = "./src/index.ts"
