@@ -38,6 +38,10 @@
   },
   "author": "Codehelios <97363633+codehelios-com@users.noreply.github.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codehelios/verify-tokenid.git"
+  },
   "dependencies": {
     "tslib": "~2.4"
   },
