@@ -1,4 +1,4 @@
 name = "verify-tokenid"
 compatibility_date = "2022-07-02"
-
 main = "./src/index.ts"
+account_id = "0849f9bf161ed08f7321d0a5b2a63ef2"
