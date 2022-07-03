@@ -33,7 +33,7 @@ export interface decodedToken {
 //   decoded: decodedToken;
 // }
 
-export async function verifyTokenId(
+export async function verifyTokenIdWorker(
   token: string,
   issuer: string,
   audience: string,
@@ -41,12 +41,6 @@ export async function verifyTokenId(
   let isValid = false;
   let error = null;
   let decoded: decodedToken;
-  if (typeof crypto === 'undefined' || !crypto.subtle) {
-    return {
-      isValid: false,
-      error: 'SubtleCrypto not supported!',
-    };
-  }
 
   try {
     const header = decodeProtectedHeader(token);

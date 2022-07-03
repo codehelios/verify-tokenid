@@ -22,7 +22,7 @@ ensureDirectoryExistence(dir)
 
 export default {
 
-  input: "./src/index.ts",
+  input: ["./src/index.ts", "./src/verifier.ts"],
   output: {
     dir: dir,
     format: "esm",

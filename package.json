@@ -1,6 +1,6 @@
 {
   "name": "@codehelios/verify-tokenid",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "Library to verify firebase tokenId in Cloudflare Workers for authenticating users using firebase auth tokenId.",
   "type": "module",
   "engines": {
