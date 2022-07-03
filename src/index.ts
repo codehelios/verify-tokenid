@@ -1,1 +1,1 @@
-export { decodedToken, tokenVerification, verifyTokenId } from './verifier.js';
+export { verifyTokenId } from './verifier.js';

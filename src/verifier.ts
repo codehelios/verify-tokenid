@@ -7,52 +7,56 @@ import {
 } from './browser/index.js';
 
 export interface decodedToken {
-  header: { alg: string | 'RS256'; kid: string; typ: string | 'JWT' } | unknown;
-  payload:
-    | {
-        iss: string;
-        aud: string;
-        auth_time: number;
-        user_id: string;
-        sub: string;
-        iat: 1656765300;
-        exp: 1656768900;
-        email: string;
-        email_verified: false;
-        firebase: {
-          identities: {
-            email: [string];
-          };
-          sign_in_provider: string;
-        };
-      }
-    | unknown;
+  header: { alg: string | 'RS256'; kid: string; typ: string | 'JWT' };
+  payload: {
+    iss: string;
+    aud: string;
+    auth_time: number;
+    user_id: string;
+    sub: string;
+    iat: 1656765300;
+    exp: 1656768900;
+    email: string;
+    email_verified: false;
+    firebase: {
+      identities: {
+        email: [string];
+      };
+      sign_in_provider: string;
+    };
+  };
 }
 
-export interface tokenVerification {
-  error: string;
-  isValid: boolean;
-  decoded: decodedToken;
-}
+// export interface tokenVerification {
+//   error: string;
+//   isValid: boolean;
+//   decoded: decodedToken;
+// }
 
 export async function verifyTokenId(
   token: string,
   issuer: string,
   audience: string,
-): Promise<tokenVerification> {
+) {
   let isValid = false;
   let error = null;
   let decoded: decodedToken;
-  const header = decodeProtectedHeader(token);
-
-  const data = await fetch(
-    'https://www.googleapis.com/robot/v1/metadata/x509/securetoken@system.gserviceaccount.com',
-  );
-  const publicKeys = await data.json();
-  let secret = publicKeys[header.kid];
-  const ecPublicKey = await importX509(secret, header.alg);
+  if (typeof crypto === 'undefined' || !crypto.subtle) {
+    return {
+      isValid: false,
+      error: 'SubtleCrypto not supported!',
+    };
+  }
 
   try {
+    const header = decodeProtectedHeader(token);
+
+    const data = await fetch(
+      'https://www.googleapis.com/robot/v1/metadata/x509/securetoken@system.gserviceaccount.com',
+    );
+    const publicKeys = await data.json();
+    let secret = publicKeys[header.kid];
+    const ecPublicKey = await importX509(secret, header.alg);
     let { protectedHeader, payload } = await jwtVerify(token, ecPublicKey, {
       issuer,
       audience,
