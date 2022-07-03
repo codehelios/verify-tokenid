@@ -7,6 +7,7 @@ export async function verifyTokenId(
     return {
       isValid: false,
       error: 'SubtleCrypto not supported!',
+      decoded: undefined,
     };
   } else {
     const { verifyTokenIdWorker } = await import('./verifier.js');
