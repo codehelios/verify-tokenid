@@ -6,9 +6,10 @@ Lightweight zero dependency library to verify Firebase ID Token in Cloudflare Wo
 
 &nbsp;
 ## Usage/Examples
-&nbsp;
+
 
 #### Verify ID Token
+
 ```javascript
 import { verifyTokenId } from "@codehelios/verify-tokenid";
 
@@ -17,8 +18,9 @@ const { isValid, decoded, error } = await verifyTokenId(tokenId, "https://secure
 
 &nbsp;
 ## API Reference
-&nbsp;
+
 #### Verify ID Token
+
 
 ```
   verifyTokenId(token, issure, audience)
@@ -31,18 +33,18 @@ const { isValid, decoded, error } = await verifyTokenId(tokenId, "https://secure
 | `audience`      | `string` | **Required**. Must be your Firebase project ID, the unique identifier for your Firebase project, which can be found in the URL of that project's console.  |
 
 
-
+&nbsp;
 ## License
 
 [MIT](https://github.com/codehelios/verify-tokenid/blob/main/LICENSE)
 
-
+&nbsp;
 ## Authors
 
 - [@codehelios](https://www.github.com/codehelios)
 - [@pyshivam](https://www.github.com/pyshivam)
 
-
+&nbsp;
 ## Acknowledgements
 
  - [Verify ID Token](https://firebase.google.com/docs/auth/admin/verify-id-tokens#verify_id_tokens_using_a_third-party_jwt_library)
