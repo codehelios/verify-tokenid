@@ -17,20 +17,32 @@ const { isValid, decoded, error } = await verifyTokenId(tokenId, "https://secure
 ```
 
 &nbsp;
+
 ## API Reference
 
-#### Verify ID Token
-
+### Verify ID Token
+Verifies Firebase ID Token and returns  `object` containing `{ isValid, decoded, error }` 
 
 ```
   verifyTokenId(token, issure, audience)
 ```
 
+#### Arguments
+
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `token`      | `string` | **Required**. FIrebase ID Token  |
+| `token`      | `string` | **Required**. Firebase ID Token  |
 | `issure`      | `string` | **Required**. Must be "https://securetoken.google.com/<projectId>", where <projectId> is the same project ID used for aud above. |
 | `audience`      | `string` | **Required**. Must be your Firebase project ID, the unique identifier for your Firebase project, which can be found in the URL of that project's console.  |
+
+#### Returns
+`object` containing `{ isValid, decoded, error }` 
+
+| Property | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `isValid`      | `boolen` | Indicates whether given Firebase ID Token is valid or not  |
+| `decoded`      | `object` or `null` | If ID Token is valid this will be decoded JWT Object `{ header, payload }` |
+| `error`      | `string` or `null` | If `isValid` is `false` then this will be error message saying why `isValid` is `false` otherwise `null`  |
 
 
 &nbsp;
