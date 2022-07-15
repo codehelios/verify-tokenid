@@ -40,7 +40,7 @@ export async function verifyTokenIdWorker(
 ) {
   let isValid = false;
   let error = null;
-  let decoded: decodedToken;
+  let decoded: decodedToken = null;
 
   try {
     const header = decodeProtectedHeader(token);
