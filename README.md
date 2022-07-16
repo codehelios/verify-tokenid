@@ -32,8 +32,8 @@ Verifies Firebase ID Token and returns  `object` containing `{ isValid, decoded,
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `token`      | `string` | **Required**. Firebase ID Token  |
-| `issure`      | `string` | **Required**. Must be `https://securetoken.google.com/<projectId>`, where `<projectId>` is the same project ID used for aud above. |
 | `audience`      | `string` | **Required**. Must be your Firebase project ID, the unique identifier for your Firebase project, which can be found in the URL of that project's console.  |
+| `issure`      | `string` | **Required**. Must be `https://securetoken.google.com/<projectId>`, where `<projectId>` is the same project ID used for aud above. |
 
 #### Returns
 `object` containing `{ isValid, decoded, error }` 
