@@ -56,8 +56,10 @@
     "firebase",
     "workers",
     "cloudflare",
-    "workers",
-    "firebase",
-    "tokenId"
+    "token",
+    "jwt",
+    "auth",
+    "verify",
+    "jose"
   ]
 }

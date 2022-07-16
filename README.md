@@ -13,6 +13,8 @@ Lightweight zero dependency library to verify Firebase ID Token in Cloudflare Wo
 ```javascript
 import { verifyTokenId } from "@codehelios/verify-tokenid";
 
+const tokenId = "<ID_TOKEN>"
+
 const { isValid, decoded, error } = await verifyTokenId(tokenId, "https://securetoken.google.com/<projectId>", "<projectId>");
 ```
 
