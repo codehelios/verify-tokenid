@@ -1,6 +1,6 @@
 {
   "name": "@codehelios/verify-tokenid",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Lightweight zero dependency library to verify firebase ID Token in Cloudflare Workers.",
   "type": "module",
   "engines": {
